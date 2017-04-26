@@ -1,3 +1,5 @@
 # Truck site -- front end branch
 
-This is the static working code for all Truck pages. Demo: http://www.google.com 
+## Demo: http://truck.dbrqx.com/index1/truck/index.html
+
+This is the static working code for all Truck pages. 
