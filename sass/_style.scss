@@ -388,37 +388,35 @@ header .pop-container h1 + .link-description {
 .flex-caption .backward,
 .flex-caption .forward {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;    
+    margin: 0 0 20px;
 }
 
-.flex-caption svg {
-    margin: auto auto 20px;
+.flex-caption .forward { 
+    margin: 20px 0 0; 
 }
 
-.flex-caption svg.db-triangle {
-    display: inline-block;
+.flex-caption .arrow {
+    border: 2px solid $pm-dark;
+    padding: 20px 15px;
+    border-radius: 30px;
+    background-color: $pm-extra-dark;
 }
 
-svg.db-triangle {
-    width: 32px;
-    height: auto;
+.flex-caption .backward .arrow_up {
+    width: 25px;    
 }
 
-svg.db-triangle .inner-triangle {
-    fill: #f4b14b;
+.flex-caption .forward .arrow_down {
+    width: 25px;    
 }
 
-svg.db-triangle .outer-triangle {
-    fill: none;
-    stroke: #f4b14b;
-    stroke-miterlimit: 10;
-    transition: fill 1s ease-out;
+
+.arrow_up .st0,
+.arrow_down .st0 {
+    fill: $light-text-color;
 }
 
-.flex-caption .forward svg {
-    margin: 20px auto auto;
-}
 
 #flex-slider-H .descriptions {
     position: absolute;
@@ -462,10 +460,10 @@ svg.db-triangle .outer-triangle {
 #flex-slider-H .outline {
     border: 2px solid $pm;
     display: block;
-    width: 90%;
-    height: 90%;
-    top: 5%;
-    left: 5%;
+    width: 95%;
+    height: 94%;
+    top: 3%;
+    left: 2.50%;
     background-color: transparent;
 }
 
@@ -476,6 +474,7 @@ svg.db-triangle .outer-triangle {
 #flex-slider-H:hover .overlay {
     opacity: 0.9;    
 }
+
 
 #flex-slider-H .slides img {
     height: 706px;
@@ -509,7 +508,7 @@ svg.db-triangle .outer-triangle {
 }
 
 .flexslider .email {
-    bottom: 20%;
+    bottom: 15%;
     left: 15%;
     font-size: 18px;
 }
@@ -523,7 +522,7 @@ svg.db-triangle .outer-triangle {
 }
 
 .flexslider .phone {
-    bottom: 20%;
+    bottom: 15%;
     right: 15%;
     transform: translate(-30px, 0);
 }
@@ -560,9 +559,9 @@ svg.phone-no {
 }
 
 .flex-slider .icon {
-    padding: 20px;
+    padding: 20px 23px;
     background-color: #fff;
-    margin: -15px -40px;
+    margin: -14px -42px;
     float: left;
     position: relative;
     border-radius: 50px;
@@ -572,60 +571,18 @@ svg.phone-no {
     z-index: 1; 
 }
 
+.flex-slider .phone .icon {
+    padding: 24px 20px;
+}
+
 .flex-slider .icon .phone-icon {
     height: 36px;
     width: 27px;
 }
 
 
-/*
-.flexslider .skew-triangle, 
-.flexslider .db-triangle {
-    position: absolute;
-    right: -15px;
-    z-index: -1;
-    top: 0px;
-    width: 15px;
-    height: 100%;   
-}
-
-.flexslider .address .db-triangle {
-    right: auto;
-    left: -15px;
-}
-*/
-
-svg.arrow {
-    position: absolute;
-    right: -16px;
-    z-index: -1;
-    top: 0px;
-    fill: #fff;
-    stroke-width: 0;
-    width: 17px;
-    height: auto;
-}
-
-svg.arrow .st0 {
-    fill: #fff;
-}
-
-svg.db-arrow {
-    position: absolute;
-    top: 0;
-    left: -16px;
-    fill: #fff;
-    stroke-width: 0;
-    width: 17px;
-    height: auto;
-}
-
-svg.db-arrow .st0 {
-    fill: #fff;
-}
-
 .flex-slider .address {
-    padding: 10px 15px 20px;
+    padding: 10px 32px 20px;
     background-color: #fff;
     float: left;
     position: relative;
@@ -634,7 +591,7 @@ svg.db-arrow .st0 {
 }
 
 .flex-slider .email .address {
-    padding: 15px 10px;
+    padding: 15px 10px 15px 48px;
 }
 
 .address .backward,
@@ -644,26 +601,34 @@ svg.db-arrow .st0 {
     width: 30px;
 }
 
+.phone-no path {
+    fill: $pm-dark;
+}
+
 .flex-slider .address .marquee {
     width: 180px;
 }
 
 .address .backward svg {
-    margin-right: 10px;
-    margin-top: 2px;
-    width: 20px;
-    height: auto;
+    margin-right: 10px;    
+    width: auto;
+    height: 26px;
 }
 
 .address .forward svg {
     margin-left: 10px;
-    width: 22px;
-    height: auto;
+    width: auto;
+    height: 26px;
+}
+
+.address .arrow_right polygon,
+.address .arrow_left polygon {
+    fill: $pm;
 }
 
 .address .marquee-content svg {
-    height: 23px;
-    width: 428px;
+    height: 26px;
+    width: 484px;    
 }
 
 .flex-slider .address img {
@@ -680,7 +645,7 @@ svg.db-arrow .st0 {
     border: 0;
     border-radius: 0;
     margin: 0 0 0px;
-    overflow: hidden;
+    overflow: visible;
 }
 
 #flex-slider-H .slides > li {
@@ -1015,10 +980,7 @@ footer .plus {
     }
     .flexslider .flex-caption {
         font-size: 26px;
-    }
-    .flex-caption svg.db-triangle {
-        width: 26px;
-    }
+    }   
     #flex-slider-H .slides img {
         height: 541px;
     }
@@ -1072,17 +1034,8 @@ footer .plus {
     }
     .flex-slider .icon img {
         height: 29px;
-    }
-    svg.db-arrow {
-        left: -13px;
-        height: 45px;
-        width: auto;
-    }
-    svg.arrow {
-        right: -13px;
-        height: 45px;
-        width: auto;
-    }
+    } 
+    
     footer .cookies {
         padding: 20px 0;
     }
@@ -1125,11 +1078,11 @@ footer .plus {
     #flex-carousel-H .slides > li > img {
         height: 118px;
     }
-    footer .link em {
-        transform: scale(0.7);
-    }
+    footer .link {
+        text-align: center;
+    }    
     footer .link:nth-child(1) {
-        padding: 50px 0 30px;
+        padding: 50px 0 30px;        
     }
     footer .link:nth-child(2) {
         padding: 0px 0 50px;
@@ -1138,7 +1091,7 @@ footer .plus {
         transform: scale(0.8);
     }
     .flexslider .flex-caption {
-        margin: 50px 30px 0;
+        margin: 40px 30px 0;
         padding: 0;
     }
     .flexslider .marquee-vertical {
@@ -1150,6 +1103,22 @@ footer .plus {
     .mobile-contacts {
         padding: 30px 20px 0;
     }
+    .mobile-contacts .icon,
+    .mobile-contacts .phone .icon {
+        background-color: $body-bg;
+        border: 3px solid $pm;
+        margin: -13px -30px -7px 0;
+        padding: 16px 18px;
+    }
+    .mobile-contacts .phone .icon {
+        padding: 16px 15px;
+        margin: -13px 0px -7px -40px;
+    }
+
+    .mobile-contacts .address {
+        background-color: $pm;
+    }
+
     .mobile-contacts .email {
         display: inline-block;
         width: auto;
@@ -1178,12 +1147,8 @@ footer .plus {
     #flex-slider-H.open .phone {
         transform: translate(50%, 0);
     }
-    svg.arrow {
-        z-index: 0;
-    }
-    svg.db-arrow {
-        left: -12px;
-    }
+   
+    
     .address .marquee-content svg {
         height: 24px;
         width: 447px;
@@ -1266,10 +1231,18 @@ footer .plus {
         height: 82px;
     }
     .flexslider .marquee-vertical {
-        height: 130px;
+        height: 155px;
     }
     .flexslider .flex-caption {
         font-size: 18px;
+        margin: 35px 30px 0;
+    }
+    .flex-caption .backward .arrow_up,
+    .flex-caption .forward .arrow_down {
+        width: 20px; 
+    }
+    .flex-caption .arrow {
+        padding: 15px 10px;
     }
 }
 
@@ -1314,14 +1287,17 @@ footer .plus {
     }
     .flexslider .flex-caption {
         font-size: 16px;
-        margin: 45px 15px;
+        margin: 34px 20px;
+    }   
+
+    .flex-caption .backward .arrow_up,
+    .flex-caption .forward .arrow_down {
+        width: 15px; 
     }
-    .flex-caption .backward svg.db-triangle {
-        margin: auto auto 15px;
+    .flex-caption .arrow {
+        padding: 11px 8px;
     }
-    .flex-caption .forward svg.db-triangle {
-        margin: 15px auto auto;
-    }
+
     .flexslider .marquee-vertical {
         height: 120px;
     }
@@ -1380,6 +1356,20 @@ footer .plus {
     #flex-carousel-H .slides > li > img {
         height: 60px;
     }
+
+    .flex-caption .backward
+    {
+        margin: 0 0 10px;
+    }
+
+    .flex-caption .forward {
+        margin: 10px 0 0;
+    }
+
+    .flexslider .flex-caption {         
+        margin: 26px 20px;
+    }
+
     /*policy page starts*/
     .page-id-policy header h1 {
         padding: 0;
@@ -1408,15 +1398,10 @@ footer .plus {
         /*If mobile < 320 keep fixed height as opposed vw units*/
     }
     .flexslider .marquee-vertical {
-        height: 115px;
+        height: 100px;
     }
     .flexslider .flex-caption {
-        margin: 40px 15px;
+        margin: 24px 20px;
     }
-    .flex-caption .backward svg.db-triangle {
-        margin: auto auto 12px;
-    }
-    .flex-caption .forward svg.db-triangle {
-        margin: 12px auto auto;
-    }
+    
 }
