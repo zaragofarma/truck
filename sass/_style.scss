@@ -882,12 +882,7 @@ footer .cookies.fadeout {
 .phone .link-description {
     left: -10px;
     right: auto;
-}
-.link-description.max-50 {
-    left: -20px;    
-}
-
-
+}  
 
 footer .plus {
     margin: 0 0 0px 10px;
@@ -1106,10 +1101,7 @@ footer .plus {
 
     .pop-container .link-description {
         max-width: 425px;
-        word-spacing: normal;           
-        right: 50%;
-        left: auto;
-        transform: translateX(50%);          
+        word-spacing: normal;  
     }   
 
     .pop-container-social .link-description {
@@ -1218,6 +1210,9 @@ footer .plus {
     }
     footer .pop-container .link-description {
         bottom: 190px;   
+        right: 50%;
+        left: auto;
+        transform: translateX(50%);
     }
     header .pop-container h1 + .link-description {
         max-width: 90%;
@@ -1426,6 +1421,14 @@ footer .plus {
 
     .mobile-contacts {
         padding: 40px 0px 0;
+    }
+
+    .pop-container-social .link-description {
+        left: 0;
+    }
+
+    .phone.pop-container-social .link-description {
+        left: -20px;  
     }
 
     /*policy page starts*/
