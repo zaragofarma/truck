@@ -326,35 +326,28 @@
                  }
              });
 
-             $(".no-touch .pop-link").hover(function() {
-
-                 var $em = $(this).parent("em");
-                 $em.addClass("active");
-
-                 /* not needed now as already solved with css only solution
-                 var $translateAmount = $em.siblings(".link-description").width() / 2 + $(this).width() / 2;
-                 $em.siblings(".link-description").css("transform", "translateX(-" + $translateAmount + "px)");
-                */
+             $(".no-touch .pop-link").hover(function() {                 
+                 $(this).siblings(".link-description").addClass("active");                 
              }, function() {
-                 $(this).parent("em").removeClass("active");
+                 $(this).siblings(".link-description").removeClass("active");
              });
 
-             $(".touch .plus").click(function() {
-
-                 $(this).parent("em").toggleClass("active");
+             $(".touch .plus").click(function(e) {
+                 $(this).closest(".pop-container").toggleClass("active");
                  $(this).parent("h1").toggleClass("active");
-
+                 e.preventDefault();   
              });
 
-             $(".touch .pop-container-social").on("click", function(e) {
-                 $(this).addClass("active");
-             });
+             $(".touch .pop-container-social .icon").on("click", function(){
+                $(this).parent(".pop-container-social").toggleClass("active");
+
+             });             
 
              $(document).on("click.popups", function(e) {
 
                  var popContainer = $(e.target).closest(".pop-container");
 
-                 $(".pop-container").not(popContainer).children("em, h1").removeClass("active");
+                 $(".pop-container").not(popContainer).children("h1").removeClass("active");
                  $(".pop-container").not(popContainer).removeClass("active");
 
              });

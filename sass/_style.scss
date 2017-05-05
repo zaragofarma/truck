@@ -243,8 +243,12 @@ svg {
 .plus {
     width: 32px;
     height: 32px;
-    margin: 0 0 -2px 15px;
+    margin: 0 0 -8px 10px;
     position: relative;
+}
+
+footer .plus {
+    vertical-align: bottom;
 }
 
 .plus svg {
@@ -254,13 +258,13 @@ svg {
 }
 
 .plus svg line {
-    stroke: #f4b14b;
+    stroke: $pm-dark;
     stroke-width: 2px;
     transition: stroke .3s ease-out;
 }
 
 .plus circle {
-    stroke: #f4b14b;
+    stroke: $pm-dark;
     stroke-width: 2px;
     fill: transparent;
     transition: fill .3s ease-out;
@@ -268,7 +272,7 @@ svg {
 
 .line {
     position: absolute;
-    background-color: #f4b14b;
+    background-color: $pm-dark;
     width: 2px;
     display: block;
 }
@@ -278,7 +282,7 @@ svg {
 }
 
 .active .plus circle {
-    fill: #f4b14b;
+    fill: $pm-dark;
 }
 
 .active .plus line {
@@ -317,6 +321,16 @@ svg {
     transform: translate(-50%, -50%);
 }
 
+.loading .truck-logo {
+    width: 200px; 
+} 
+
+.truck-logo .st0 {
+    fill-rule: evenodd;
+    clip-rule: evenodd;
+    fill: #183650;
+} 
+
 .container {
     padding: 0 15px;
     width: 970px;
@@ -328,14 +342,14 @@ svg {
 
 header .logo {
     width: 140px;
+    display: inline-block;
 }
 
 header h1 {
     display: inline-block;
     vertical-align: middle;
     padding-left: 15px;
-    color: $pm-dark;
-    /* previous was #555 */
+    color: $pm-dark;    
     font-size: 24px;
     margin: 1.5em 0;
     font-weight: light;
@@ -348,12 +362,13 @@ header .pop-container {
 
 header .pop-container h1 + .link-description {
     bottom: auto;
-    top: 80px;
+    top: 95px;
     left: 50%;
-    transform: translateX(-50%) skewX(-10deg);
+    transform: translateX(-50%);
     max-width: none;
     width: 970px;
     padding: 25px;
+    background-color: $pm-dark;
 }
 
 .no-touch header h1:hover + .link-description {
@@ -451,21 +466,21 @@ header .pop-container h1 + .link-description {
     z-index: 1;
 }
 
-
-.no-touch #flex-slider-H .overlay,
-.no-touch #flex-slider-H .outline {
-    display: block;
-}
-
 #flex-slider-H .outline {
     border: 2px solid $pm;
-    display: block;
+    display: none;    
     width: 95%;
     height: 94%;
     top: 3%;
     left: 2.50%;
     background-color: transparent;
 }
+
+.no-touch #flex-slider-H .overlay,
+.no-touch #flex-slider-H .outline {
+    display: block;
+}
+
 
 #flex-slider-H:hover .outline {
     opacity: 1;
@@ -485,6 +500,7 @@ header .pop-container h1 + .link-description {
 .flex-slider .email,
 .flex-slider .phone {
     position: relative;
+    word-spacing: normal;
 }
 
 .flexslider .email,
@@ -497,12 +513,12 @@ header .pop-container h1 + .link-description {
     transition: all .3s ease-out;
 }
 
-.no-touch .pop-container-social:hover .link-description {
+.no-touch .pop-container:hover .link-description {
     opacity: 1;
     visibility: visible;
 }
 
-.pop-container-social.active .link-description {
+.pop-container.active .link-description {
     opacity: 1;
     visibility: visible;
 }
@@ -518,7 +534,7 @@ header .pop-container h1 + .link-description {
 }
 
 .email-address .st2 {
-    fill: #f4b14b;
+    fill: $pm-dark;
 }
 
 .flexslider .phone {
@@ -530,18 +546,6 @@ header .pop-container h1 + .link-description {
 svg.phone-no {
     height: 26px;
     width: 230px;
-}
-
-.phone-no .st0 {
-    fill: #f4b14b;
-}
-
-.phone-icon .st0 {
-    fill: #B5802D;
-}
-
-.phone-icon .st1 {
-    fill: #F4B14B;
 }
 
 .no-touch #flex-slider-H:hover .email,
@@ -561,7 +565,7 @@ svg.phone-no {
 .flex-slider .icon {
     padding: 20px 23px;
     background-color: #fff;
-    margin: -14px -42px;
+    margin: -12px -42px;
     float: left;
     position: relative;
     border-radius: 50px;
@@ -580,7 +584,6 @@ svg.phone-no {
     width: 27px;
 }
 
-
 .flex-slider .address {
     padding: 10px 32px 20px;
     background-color: #fff;
@@ -591,7 +594,7 @@ svg.phone-no {
 }
 
 .flex-slider .email .address {
-    padding: 15px 10px 15px 48px;
+    padding: 16px 10px 14px 48px;
 }
 
 .address .backward,
@@ -645,7 +648,7 @@ svg.phone-no {
     border: 0;
     border-radius: 0;
     margin: 0 0 0px;
-    overflow: visible;
+    overflow: hidden;
 }
 
 #flex-slider-H .slides > li {
@@ -677,8 +680,7 @@ svg.phone-no {
 #flex-carousel-H .flex-direction-nav a {
     opacity: 1;
     z-index: 1;
-    width: 40px;
-    top: 80px;
+    width: 40px;    
     left: 0;
     height: 40px;
     border-radius: 20px;
@@ -717,7 +719,7 @@ footer {
 }
 
 footer .link {
-    padding: 75px 0;
+    padding: 75px 0;    
 }
 
 footer .link.text-left {
@@ -745,8 +747,17 @@ footer .inverse-skew {
     display: inline-block;
 }
 
+footer .visible-touch {
+    display: none;
+}
 
+.touch .footer .visible-touch {
+    display: inline-block;
+}
 
+footer .pop-link span {
+    vertical-align: middle;
+}
 
 footer .cookies {
     padding: 50px 0px;
@@ -755,14 +766,18 @@ footer .cookies {
     z-index: 2;
     width: calc(100% - 30px);
     left: 15px;
-    background: rgba(255, 255, 255, 0.8);
-    color: #000;
+    background: rgba($pm-dark, 0.9);  
+    color: $light-text-color;
     box-shadow: 0 0px 6px rgba(0, 0, 0, 0.16), 0 0px 6px rgba(0, 0, 0, 0.23);
     display: none;
     opacity: 0;
     transform: translateY(0);
     transition: all .3s ease-out;
     font-size: 20px;
+}
+
+.cookies a {
+    color: $pm; 
 }
 
 footer .cookies.fadein {
@@ -789,7 +804,8 @@ footer .cookies.fadeout {
     width: 100px;
     height: 100px;
     border-radius: 50px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: $pm-dark;
+    opacity: 0.9;
     position: absolute;
     top: 0;
     transition: transform .4s ease-out;
@@ -801,7 +817,7 @@ footer .cookies.fadeout {
     z-index: 1;
     bottom: 15px;
     left: 15px;
-    fill: #f4b14b;
+    fill: $pm;
 }
 
 #flex-slider-H.open .circular-overlay {
@@ -812,13 +828,13 @@ footer .cookies.fadeout {
     display: none;
 }
 
-.pop-container .link-description {
-    position: absolute;
-    overflow: visible;
-    background-color: #fff;
+.pop-container .link-description { 
+    position: absolute; 
+    overflow: visible; 
+    background-color: $pm-dark;  
     bottom: 145px;
-    left: 25%;
-    transform: translateX(-50%) skewX(-10deg);
+    left: calc(50% - 127px);
+    transform: translateX(-50%); 
     padding: 10px 15px;
     text-align: left;
     visibility: hidden;
@@ -828,7 +844,13 @@ footer .cookies.fadeout {
     font-size: 16px;
     max-width: 510px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    z-index: 3;
+    z-index: 3;  
+}
+
+.text-left .pop-container .link-description { 
+    right: calc(50% - 133px);
+    left: auto;
+    transform: translateX(50%);
 }
 
 .link-description.max-50 {
@@ -840,10 +862,11 @@ footer .cookies.fadeout {
 }
 
 .pop-container-social .link-description {
-    bottom: 75px;
+    bottom: 85px;
     left: -20px;
-    transform: translateX(0) skewX(-10deg);
+    transform: translateX(0);
     min-width: 600px;
+    background-color: $pm-dark;
 }
 
 .pop-container-social .link-description.max-100 {
@@ -857,18 +880,17 @@ footer .cookies.fadeout {
 }
 
 .phone .link-description {
-    left: auto;
-    right: -230px;
+    left: -10px;
+    right: auto;
+}
+.link-description.max-50 {
+    left: -20px;    
 }
 
 
-em.active ~ .link-description {
-    visibility: visible;
-    opacity: 1;
-}
 
 footer .plus {
-    margin: 0 0 -2px 10px;
+    margin: 0 0 0px 10px;
 }
 
 
@@ -878,9 +900,13 @@ footer .plus {
     color: #000;
 }
 
+.page-id-policy .link-description {
+    color: $light-text-color;
+}
+
 .page-id-policy h2,
 .page-id-policy h3 {
-    color: #f4b14b;
+    color: $pm-dark;
     font-weight: normal;
 }
 
@@ -975,9 +1001,7 @@ footer .plus {
     #flex-carousel-H .flex-direction-nav a {
         width: 40px;
     }
-    #flex-carousel-H .flex-direction-nav a:before {
-        font-size: 30px;
-    }
+    
     .flexslider .flex-caption {
         font-size: 26px;
     }   
@@ -1016,17 +1040,17 @@ footer .plus {
         padding: 5px 10px 14px;
     }
     .flex-slider .address .marquee {
-        width: 120px;
+        width: 163px;
     }
     .address .forward svg,
     .address .backward svg {
-        margin-top: 3px;
+        margin-top: 1px;
     }
     .flexslider .phone-no {
         height: 26px;
     }
     .flex-slider .email .address {
-        padding: 8px 10px 6px;
+        padding: 9px 10px 5px 40px;
     }
     .address .marquee-content svg {
         height: 28px;
@@ -1039,11 +1063,57 @@ footer .plus {
     footer .cookies {
         padding: 20px 0;
     }
-    .pop-container .link-description {
-        max-width: 380px;
+
+     .mobile-contacts {
+        padding: 30px 20px 0;
+        word-spacing: 200px;
     }
+    
+    .mobile-contacts .icon,
+    .mobile-contacts .phone .icon {
+        background-color: $body-bg;
+        border: 3px solid $pm;
+        margin: -12px -30px -7px 0;
+        padding: 16px 18px;
+    }
+
+    .mobile-contacts .phone .icon {
+        padding: 16px 15px;
+        margin: -13px 0px -7px -40px;
+    }    
+
+    .mobile-contacts .email {
+        display: inline-block;
+        width: auto;
+        margin: auto;
+        margin-bottom: 20px;
+    }   
+
+    .mobile-contacts .address {
+        background-color: $pm;
+    }
+
+    .mobile-contacts .phone {
+        display: inline-block;
+        width: auto;
+        margin: auto;
+    }
+
+    .address .arrow_right polygon, 
+    .address .arrow_left polygon {
+        fill: $body-bg;
+    }
+
+    .pop-container .link-description {
+        max-width: 425px;
+        word-spacing: normal;           
+        right: 50%;
+        left: auto;
+        transform: translateX(50%);          
+    }   
+
     .pop-container-social .link-description {
-        bottom: 60px;
+        bottom: 70px;
     }
     header .pop-container h1 + .link-description {
         max-width: 630px;
@@ -1078,18 +1148,16 @@ footer .plus {
     #flex-carousel-H .slides > li > img {
         height: 118px;
     }
-    footer .link {
+    footer .link { 
         text-align: center;
     }    
     footer .link:nth-child(1) {
-        padding: 50px 0 30px;        
+        padding: 50px 0 20px;        
     }
     footer .link:nth-child(2) {
         padding: 0px 0 50px;
     }
-    footer .link em.active {
-        transform: scale(0.8);
-    }
+    
     .flexslider .flex-caption {
         margin: 40px 30px 0;
         padding: 0;
@@ -1100,45 +1168,14 @@ footer .plus {
     .flex-caption .marquee-content {
         padding-bottom: 40px;
     }
-    .mobile-contacts {
-        padding: 30px 20px 0;
-    }
-    .mobile-contacts .icon,
-    .mobile-contacts .phone .icon {
-        background-color: $body-bg;
-        border: 3px solid $pm;
-        margin: -13px -30px -7px 0;
-        padding: 16px 18px;
-    }
-    .mobile-contacts .phone .icon {
-        padding: 16px 15px;
-        margin: -13px 0px -7px -40px;
-    }
 
-    .mobile-contacts .address {
-        background-color: $pm;
-    }
-
-    .mobile-contacts .email {
-        display: inline-block;
-        width: auto;
-        margin: auto;
-        padding-bottom: 20px;
-    }
-    .flex-slider .address .marquee {
-        width: 163px;
-    }
     .address .backward svg {
-        margin: -1px 15px 0 0px;
+        margin: -2px 15px 0 0px;
     }
     .address .forward svg {
-        margin: -1px 0 0 15px;
+        margin: -2px 0 0 15px;
     }
-    .mobile-contacts .phone {
-        display: inline-block;
-        width: auto;
-        margin: auto;
-    }
+    
     .no-touch #flex-slider-H:hover .email,
     #flex-slider-H.open .email {
         transform: translate(-50%, 0);
@@ -1154,25 +1191,24 @@ footer .plus {
         width: 447px;
     }
     .flex-slider .email .address {
-        padding: 12px 10px 6px;
+        padding: 12px 10px 6px 40px;
     }
-    .pop-container .link-description {
-        max-width: 450px;
-        left: 50%;
-        bottom: 170px;
+    
+    .text-left .pop-container .link-description {
+        right: 50%;
+        left: auto;
+        transform: translateX(50%);
     }
     .pop-container-social .link-description {
-        bottom: 60px;
-        left: 0px;
-        min-width: 0;
+        bottom: 70px;        
     }
-    .phone .link-description {
-        left: -15px;
-        right: auto;
+    .link-description.max-100 {
+        min-width: 390px;
     }
+   
     .pop-container-social .link-description,
-    .pop-container-social .link-description.max-100,
-    .pop-container-social .link-description.max-50 {
+    .pop-container-social .link-description.max-100
+     {
         min-width: 360px;
         white-space: normal;
     }
@@ -1180,12 +1216,14 @@ footer .plus {
         min-width: 0;
         white-space: nowrap;
     }
+    footer .pop-container .link-description {
+        bottom: 190px;   
+    }
     header .pop-container h1 + .link-description {
         max-width: 90%;
     }
     footer .link:nth-child(2) .link-description {
-        right: 50%;
-        bottom: 110px;
+        bottom: 117px;
     }
     footer .cookies {
         font-size: 16px;
@@ -1197,10 +1235,7 @@ footer .plus {
     .page-id-policy section {
         padding: 15px 15px 0;
         margin-bottom: 15px;
-    }
-    .page-id-policy header h1 {
-        font-size: 1.75em;
-    }
+    }   
     .page-id-policy p {
         padding-bottom: 15px;
     }
@@ -1224,6 +1259,9 @@ footer .plus {
         margin: 0.5em 0;
         padding-left: 0;
     }
+    header .pop-container h1 + .link-description {
+        top: 135px;
+    }
     #flex-slider-H .slides img {
         height: 338px;
     }
@@ -1244,6 +1282,12 @@ footer .plus {
     .flex-caption .arrow {
         padding: 15px 10px;
     }
+
+    /*policy page*/
+    .page-id-policy header .logo {
+        display: block;
+        margin: auto;
+    }
 }
 
 
@@ -1252,10 +1296,7 @@ footer .plus {
 @media only screen and (max-width: 479px) {
     .container {
         width: 400px;
-    }
-    .visible-sm {
-        display: none;
-    }
+    }    
     .visible-xxs {
         display: block;
     }
@@ -1268,11 +1309,26 @@ footer .plus {
     header h1 {
         font-size: 20px;
     }
+    header .pop-container h1 + .link-description {
+        top: 110px;
+    }
     #flex-slider-H {
         border-width: 8px;
     }
+    #flex-carousel-H .flex-direction-nav a {
+        width: 30px;
+        height: 30px;
+        top: 56%;
+    }
+
     #flex-carousel-H .flex-direction-nav a:before {
-        font-size: 20px;
+        font-size: 16px;
+    }
+    #flex-carousel-H .flex-direction-nav .flex-next {
+        rights: -10px;
+    }
+    #flex-carousel-H .flex-direction-nav .flex-prev {
+        lefts: -10px;
     }
     #flex-carousel-H .slides > li > img {
         padding: 4px;
@@ -1282,9 +1338,7 @@ footer .plus {
         width: calc(100% - 50px);
         padding: 15px 10px;
     }
-    #flex-carousel-H .flex-direction-nav a {
-        width: 25px;
-    }
+   
     .flexslider .flex-caption {
         font-size: 16px;
         margin: 34px 20px;
@@ -1319,28 +1373,22 @@ footer .plus {
         bottom: 12px;
         left: 12px;
     }
-    .mobile-contacts {
-        padding: 20px 10px 0 0;
-    }
+   
     .mobile-contacts .email,
     .mobile-contacts .phone {
         display: inline-block;
     }
-    .mobile-contacts .email {
-        padding-bottom: 10px;
-    }
+    
     .flex-slider .address .marquee {
-        width: 135px;
+        width: 159px;
     }
     .address .marquee-content svg {}
     .mobile-contacts svg {
         z-index: auto;
     }
-    .pop-container .link-description {
-        max-width: 260px;
-    }
+    
     .pop-container-social .link-description,
-    .pop-container-social .link-description.max-100,
+    .link-description.max-100, 
     .pop-container-social .link-description.max-50 {
         min-width: 290px;
     }
@@ -1349,6 +1397,12 @@ footer .plus {
 @media only screen and (max-width: 399px) {
     .container {
         width: 350px;
+    }      
+
+    header h1 span.visible-touch {
+        position: absolute;
+        top: 25px;
+        right: 20%;
     }
     #flex-slider-H .slides img {
         height: 241px;
@@ -1370,6 +1424,10 @@ footer .plus {
         margin: 26px 20px;
     }
 
+    .mobile-contacts {
+        padding: 40px 0px 0;
+    }
+
     /*policy page starts*/
     .page-id-policy header h1 {
         padding: 0;
@@ -1388,7 +1446,8 @@ footer .plus {
         width: 320px;
     }
     header .pop-container h1 + .link-description {
-        max-width: 260px;
+        max-width: 300px;
+        width: 300px;
     }
     #flex-slider-H .slides img {
         height: 217px;
@@ -1402,6 +1461,30 @@ footer .plus {
     }
     .flexslider .flex-caption {
         margin: 24px 20px;
+    }
+    .flex-slider .address {
+        padding: 5px 0px 14px;
+    }
+    .flex-slider .address .marquee {
+        width: 140px;
+    }
+    .address .marquee-content svg {
+        height: 20px;
+        width: 372px;
+    }
+    svg.phone-no {
+        height: 24px;
+    }
+
+    .flex-slider .email .address {
+        padding: 15px 10px 9px 40px;
+    }
+
+    .address .backward svg {
+        margin: -4px 15px 0 0px;
+    }
+    .address .forward svg {
+        margin: -4px 0 0 15px;
     }
     
 }
