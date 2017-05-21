@@ -28,7 +28,10 @@
 <body class="page-id-homepage">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+        <![endif]-->  
+    
+
+
     <div class="loading">        
         <svg version="1.1" class="truck-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
              viewBox="0 0 94.5 40.8" style="enable-background:new 0 0 94.5 40.8;" xml:space="preserve">        
@@ -59,6 +62,7 @@
     </div>
 
     <div class="container">
+
         <header class="text-center ">
             <svg version="1.1" class="truck-logo logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 94.5 40.8" style="enable-background:new 0 0 94.5 40.8;" xml:space="preserve">        
@@ -752,36 +756,83 @@
                 </div>
             </div>
         </footer>
+        
+        <!-- New code added on 20 may 2017 --> 
+        <div class="captcha-chat">
+            <div class="captcha-container media">            
+                <div class="media-left">
+                    <img class="b-lazy cartoon-logo" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" data-src="img/truck_cartoon.png" data-src-small="img/truck_cartoon.png|img/truck_cartoon.png" />
+                </div>
+                <div class="media-body">
+                    <p class="security">Security Check:</p>
+                    <p class="why-captcha">Just in case you are bot</p>
+                </div>                
+                <div id="captcha">
+                    <div class="controls">
+                        <input class="user-text btn-common" placeholder="Type here" type="text" />
+                        <button class="validate btn-common">
+                            <!-- this image should be converted into inline svg -->
+                            <img src="img/enter_icon.png" alt="submit icon">
+                        </button>
+                        <button class="refresh btn-common">
+                            <!-- this image should be converted into inline svg -->
+                            <img src="img/refresh_icon.png" alt="refresh icon">
+                        </button>
+                    </div>
+                </div>
+                <p class="wrong info">Wrong!, please try again.</p>
+                <p class="redirecting info">Redirecting... Hold on</p>
+                <p class="captcha_loading info">Loading... Hold on</p>
+            </div>
+            <button class="chat-icon btn-common">
+                <svg class="message-icon" width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.295 24.412a.987.987 0 0 1-1.123-.43L19.9 20.358H9.527c-1.392 0-2.523-1.153-2.523-2.57V16.3c0-.563.448-1.02 1-1.02.553 0 1 .457 1 1.02v1.485c0 .295.235.533.523.533h10.92c.036 0 .067.018.103.022a.96.96 0 0 1 .527.224.984.984 0 0 1 .14.15c.023.026.054.043.073.075l.725 1.154V9.7a.528.528 0 0 0-.523-.532h-1.48c-.55 0-1-.457-1-1.02 0-.56.45-1.018 1-1.018h1.48c1.392 0 2.524 1.152 2.524 2.57V23.433c0 .452-.293.85-.72.978zM14.49 13.226H4.116L1.844 16.85a.997.997 0 0 1-1.124.43 1.017 1.017 0 0 1-.72-.978V2.57C0 1.152 1.132 0 2.523 0H14.49c1.39 0 2.52 1.152 2.52 2.57v8.085c0 1.418-1.13 2.57-2.52 2.57zm.52-10.656a.528.528 0 0 0-.52-.532H2.522c-.288 0-.522.24-.522.532v10.242l.726-1.153c.02-.032.05-.05.07-.076a.897.897 0 0 1 .296-.256.92.92 0 0 1 .372-.118c.037-.004.068-.022.104-.022h10.92c.288 0 .522-.238.522-.533V2.57z" fill="#FFF" fill-rule="evenodd">
+                        
+                    </path>
+                </svg>
+
+                <svg class="cross-icon shown" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.726 15.402c.365.366.365.96 0 1.324-.178.178-.416.274-.663.274-.246 0-.484-.096-.663-.274L8.323 9.648h.353L1.6 16.726c-.177.178-.416.274-.663.274-.246 0-.484-.096-.663-.274-.365-.365-.365-.958 0-1.324L7.35 8.324v.35L.275 1.6C-.09 1.233-.09.64.274.274c.367-.365.96-.365 1.326 0l7.076 7.078h-.353L15.4.274c.366-.365.96-.365 1.326 0 .365.366.365.958 0 1.324L9.65 8.675v-.35l7.076 7.077z" fill="#FFF" fill-rule="evenodd">
+                        
+                    </path>
+                </svg>
+            </button>
+        </div>
+        <!-- 20 may 2017 new code finishes here -->
+
     </div>
     <script src="https://cdn.jsdelivr.net/blazy/1.8.2/blazy.min.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.min.js" defer></script>
     <script src="js/marqueedirection.js" defer></script>
+    <script src="js/client_captcha.js" defer></script>
     <script src="js/main.js" defer></script>
-    <!-- Start of Async Drift Code -->
-    <script>
-    ! function() {
-        var t;
-        if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void(window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0,
-            t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"],
-            t.factory = function(e) {
-                return function() {
-                    var n;
-                    return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
-                };
-            }, t.methods.forEach(function(e) {
-                t[e] = t.factory(e);
-            }), t.load = function(t) {
-                var e, n, o, i;
-                e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
-                    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
-                    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
-            });
-    }();
-    drift.SNIPPET_VERSION = '0.3.1';
-    drift.load('r8ez9x624k5p');
-    </script>
-    <!-- End of Async Drift Code -->
-</body>
 
+    <!-- below script tag changed on 20 may 2017 -->
+    <!-- Start of Async Drift Code -->
+    <script>       
+        ! function() {
+            var t;
+            if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void(window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
+                t.methods = ["identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on"], 
+                t.factory = function(e) {
+                    return function() {
+                        var n;
+                        return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
+                    };
+                }, t.methods.forEach(function(e) {
+                    t[e] = t.factory(e);
+                }), t.load = function(t) {
+                    var e, n, o, i;
+                    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"),
+                        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js",
+                        n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
+                });
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('r8ez9x624k5p');    
+    </script>    
+    <!-- End of Async Drift Code -->
+    
+</body>
 </html>

@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-
-<body>
-    <div id="test">
-        <h1>This is a test</h1>
-    </div>
-    <div id="captcha">
-    </div>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script>
-    (function(window, document, $, undefined) {
+    ;(function(window, document, $, undefined) {
 
         var possibleCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
@@ -24,15 +8,15 @@
             text: null,
             randomText: true,
             randomColours: true,
-            width: 300,
-            height: 200,
+            width: 244,
+            height: 163,
             colour1: null,
             colour2: null,
-            font: 'bold 50px "Comic Sans MS", cursive, sans-serif',
+            font: 'normal 40px "Comic Sans MS", cursive, sans-serif',
             onSuccess: function() {
                 alert('Correct!');
             },
-            onFailure: function(){
+            onFailure: function() {
                 alert('wrong!');
             }
         };
@@ -45,26 +29,25 @@
 
             this._container = $(this._settings.selector);
 
-            var canvasWrapper = $('<div>').appendTo(this._container);
+            var canvasWrapper = $('<div>').prependTo(this._container);
 
-            this._canvas = $('<canvas>').appendTo(canvasWrapper).width(this._settings.width).height(this._settings.height);
+            this._canvas = $('<canvas>').appendTo(canvasWrapper).attr("width", this._settings.width).attr("height", this._settings.height);
 
-            var controlWrapper = $('<div>').appendTo(this._container);
-
-            this._input = $('<input>').addClass('user-text')
-                .on('keypress', function(e) {
+            this._input = this._container.find('.user-text').on('keypress.captcha', function(e) {
                     if (e.which == 13) {
                         that.validate(that._input.val());
                     }
-                })
-                .appendTo(controlWrapper);
+                });                
 
-            this._button = $('<button>').text('submit')
-                .addClass('validate')
-                .on('click', function() {
+            this._button = this._container.find('.validate')
+                .on('click.captcha', function() {
                     that.validate(that._input.val());
-                })
-                .appendTo(controlWrapper);
+                });
+
+            this._buttonRefresh = this._container.find('.refresh')
+                .on('click.captcha', function() {
+                    that.generate();
+                });
 
             this._context = this._canvas.get(0).getContext("2d");
 
@@ -88,13 +71,16 @@
                 if (this._settings.randomColours) {
                     this._settings.colour1 = this._generateRandomColour();
                     this._settings.colour2 = this._generateRandomColour();
-                }
+                }                
 
                 var gradient1 = context.createLinearGradient(0, 0, this._settings.width, 0);
                 gradient1.addColorStop(0, this._settings.colour1);
                 gradient1.addColorStop(1, this._settings.colour2);
 
-                //context.fillStyle = gradient1;
+                context.fillStyle = gradient1;
+                context.fillRect(0, 0, this._settings.width, this._settings.height);
+
+                context.fillStyle = "rgba(255,255,255,0.65)";
                 context.fillRect(0, 0, this._settings.width, this._settings.height);
 
                 var gradient2 = context.createLinearGradient(0, 0, this._settings.width, 0);
@@ -115,7 +101,7 @@
 
                 context.setTransform(1, 0, 0, 1, 0, 0);
 
-                var numRandomCurves = Math.floor((Math.random() * 6) + 5);
+                var numRandomCurves = Math.floor((Math.random() * 3) + 5);
 
                 for (var i = 0; i < numRandomCurves; i++) {
                     this._drawRandomCurve();
@@ -161,16 +147,6 @@
             }
         };
 
-        $.CAPTCHA = CAPTCHA || {};
+        $.Captcha = CAPTCHA || {};
 
     }(window, document, jQuery));
-
-    var myCaptcha = new $.CAPTCHA();
-
-    myCaptcha.generate();
-
-
-    </script>
-</body>
-
-</html>
